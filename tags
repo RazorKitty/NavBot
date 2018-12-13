@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACTIONEXPLOREAVOID	include/ActionExploreAvoid.h	2;"	d
+ACTIONEXPLOREVELOCITY	include/ActionExploreVelocity.h	2;"	d
+ActionExploreAvoid	include/ActionExploreAvoid.h	/^class ActionExploreAvoid : public ArAction {$/;"	c
+ActionExploreAvoid	src/ActionExploreAvoid.cpp	/^ActionExploreAvoid::ActionExploreAvoid(double turnThreshold, double turnAmount):$/;"	f	class:ActionExploreAvoid
+ActionExploreVelocity	include/ActionExploreVelocity.h	/^class ActionExploreVelocity : public ArAction {$/;"	c
+ActionExploreVelocity	src/ActionExploreVelocity.cpp	/^ActionExploreVelocity::ActionExploreVelocity(double maxSpeed, double stopDistance):$/;"	f	class:ActionExploreVelocity
+NavBot_config	Makefile	/^  NavBot_config = release$/;"	m
+PROJECTS	Makefile	/^PROJECTS := NavBot$/;"	m
+SILENT	Makefile	/^  SILENT = @$/;"	m
+config	Makefile	/^  config=release$/;"	m
+fire	src/ActionExploreAvoid.cpp	/^ArActionDesired *ActionExploreAvoid::fire(ArActionDesired currentDesired) {$/;"	f	class:ActionExploreAvoid
+fire	src/ActionExploreVelocity.cpp	/^ArActionDesired *ActionExploreVelocity::fire(ArActionDesired currentDesired) {$/;"	f	class:ActionExploreVelocity
+main	src/NavBot.cpp	/^int main(int argc, char **argv) {$/;"	f
+myDesired	include/ActionExploreAvoid.h	/^        ArActionDesired myDesired;$/;"	m	class:ActionExploreAvoid
+myDesired	include/ActionExploreVelocity.h	/^        ArActionDesired myDesired;$/;"	m	class:ActionExploreVelocity
+myMaxSpeed	include/ActionExploreVelocity.h	/^        double myMaxSpeed;$/;"	m	class:ActionExploreVelocity
+mySonar	include/ActionExploreAvoid.h	/^        ArRangeDevice *mySonar;$/;"	m	class:ActionExploreAvoid
+mySonar	include/ActionExploreVelocity.h	/^        ArRangeDevice *mySonar;$/;"	m	class:ActionExploreVelocity
+myStopDistance	include/ActionExploreVelocity.h	/^        double myStopDistance;$/;"	m	class:ActionExploreVelocity
+myTurnAmount	include/ActionExploreAvoid.h	/^        double myTurnAmount;$/;"	m	class:ActionExploreAvoid
+myTurnThreshold	include/ActionExploreAvoid.h	/^        double myTurnThreshold;$/;"	m	class:ActionExploreAvoid
+myTurning	include/ActionExploreAvoid.h	/^        int myTurning;$/;"	m	class:ActionExploreAvoid
+setRobot	src/ActionExploreAvoid.cpp	/^void ActionExploreAvoid::setRobot(ArRobot *robot) {$/;"	f	class:ActionExploreAvoid
+setRobot	src/ActionExploreVelocity.cpp	/^void ActionExploreVelocity::setRobot(ArRobot *robot) {$/;"	f	class:ActionExploreVelocity
+~ActionExploreAvoid	include/ActionExploreAvoid.h	/^        virtual ~ActionExploreAvoid(void){};$/;"	f	class:ActionExploreAvoid
+~ActionExploreVelocity	include/ActionExploreVelocity.h	/^        virtual ~ActionExploreVelocity(void){};$/;"	f	class:ActionExploreVelocity

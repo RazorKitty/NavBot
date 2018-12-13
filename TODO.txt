@@ -1,0 +1,38 @@
+**********
+*  TODO  *
+**********
+
+build a set of actions to perform basic navigational tasks
+build map of enviroment with sonar data
+use knowledge of incomplete map to refine navigational skill
+use only internal map to navigate between points
+
+**************
+*  hardware  *
+**************
+amigobot
+Sonar
+starting at the front the array of 8 sonar devices are angled symetrically 4 eitherside at 12, 44, 90, 144 degrees
+
+*************
+*  Actions  *
+*************
+explore velocity action
+explore avoid front near
+explore avoid front far
+explore avoid side near
+explore avoid side far
+recover from crash
+
+**************************
+*  higher level actions  *
+**************************
+move to unexplored areas
+navigate area to completion
+
+
+******************
+*  useful links  *
+******************
+Aria source http://robots.mobilerobots.com/ARIA/download/archives/
+ARNL http://vigir.missouri.edu/~gdesouza/Research/MobileRobotics/Software/

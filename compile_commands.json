@@ -1,0 +1,47 @@
+[
+    {
+        "arguments": [
+            "g++", 
+            "-c", 
+            "-I/usr/local/Aria/include", 
+            "-I/usr/local/Aria/ArNetworking/include", 
+            "-Iinclude", 
+            "-m64", 
+            "-o", 
+            "obj/ActionExploreAvoid.o", 
+            "src/ActionExploreAvoid.cpp"
+        ], 
+        "directory": "/home/william/Projects/FYP/NavBot", 
+        "file": "src/ActionExploreAvoid.cpp"
+    }, 
+    {
+        "arguments": [
+            "g++", 
+            "-c", 
+            "-I/usr/local/Aria/include", 
+            "-I/usr/local/Aria/ArNetworking/include", 
+            "-Iinclude", 
+            "-m64", 
+            "-o", 
+            "obj/ActionExploreVelocity.o", 
+            "src/ActionExploreVelocity.cpp"
+        ], 
+        "directory": "/home/william/Projects/FYP/NavBot", 
+        "file": "src/ActionExploreVelocity.cpp"
+    }, 
+    {
+        "arguments": [
+            "g++", 
+            "-c", 
+            "-I/usr/local/Aria/include", 
+            "-I/usr/local/Aria/ArNetworking/include", 
+            "-Iinclude", 
+            "-m64", 
+            "-o", 
+            "obj/NavBot.o", 
+            "src/NavBot.cpp"
+        ], 
+        "directory": "/home/william/Projects/FYP/NavBot", 
+        "file": "src/NavBot.cpp"
+    }
+]
