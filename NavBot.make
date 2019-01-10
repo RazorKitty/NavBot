@@ -38,9 +38,11 @@ all: prebuild prelink $(TARGET)
 endif
 
 OBJECTS := \
-	$(OBJDIR)/ActionExploreAvoid.o \
+	$(OBJDIR)/ActionExploreAvoidFrontNear.o \
+	$(OBJDIR)/ActionExploreNavigateNear.o \
 	$(OBJDIR)/ActionExploreVelocity.o \
 	$(OBJDIR)/NavBot.o \
+	$(OBJDIR)/NavBotUtil.o \
 
 RESOURCES := \
 
@@ -92,7 +94,15 @@ endif
 	$(SILENT) $(CXX) -x c++-header $(ALL_CXXFLAGS) -o "$@" -MF "$(@:%.gch=%.d)" -c "$<"
 endif
 
-$(OBJDIR)/ActionExploreAvoid.o: src/ActionExploreAvoid.cpp
+$(OBJDIR)/ActionExploreAvoidFrontNear.o: src/ActionExploreAvoidFrontNear.cpp
+	@echo $(notdir $<)
+ifeq (posix,$(SHELLTYPE))
+	$(SILENT) mkdir -p $(OBJDIR)
+else
+	$(SILENT) mkdir $(subst /,\\,$(OBJDIR))
+endif
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/ActionExploreNavigateNear.o: src/ActionExploreNavigateNear.cpp
 	@echo $(notdir $<)
 ifeq (posix,$(SHELLTYPE))
 	$(SILENT) mkdir -p $(OBJDIR)
@@ -109,6 +119,14 @@ else
 endif
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/NavBot.o: src/NavBot.cpp
+	@echo $(notdir $<)
+ifeq (posix,$(SHELLTYPE))
+	$(SILENT) mkdir -p $(OBJDIR)
+else
+	$(SILENT) mkdir $(subst /,\\,$(OBJDIR))
+endif
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/NavBotUtil.o: src/NavBotUtil.cpp
 	@echo $(notdir $<)
 ifeq (posix,$(SHELLTYPE))
 	$(SILENT) mkdir -p $(OBJDIR)

@@ -4,29 +4,42 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-ACTIONEXPLOREAVOID	include/ActionExploreAvoid.h	2;"	d
+ACTIONEXPLOREAVOIDFRONTNEAR	include/ActionExploreAvoidFrontNear.h	2;"	d
 ACTIONEXPLOREVELOCITY	include/ActionExploreVelocity.h	2;"	d
-ActionExploreAvoid	include/ActionExploreAvoid.h	/^class ActionExploreAvoid : public ArAction {$/;"	c
-ActionExploreAvoid	src/ActionExploreAvoid.cpp	/^ActionExploreAvoid::ActionExploreAvoid(double turnThreshold, double turnAmount):$/;"	f	class:ActionExploreAvoid
+ACTOINEXPLORENAVIGATENEAR	include/ActionExploreNavigateNear.h	2;"	d
+ActionExploreAvoidFrontNear	include/ActionExploreAvoidFrontNear.h	/^class ActionExploreAvoidFrontNear : public ArAction {$/;"	c
+ActionExploreAvoidFrontNear	src/ActionExploreAvoidFrontNear.cpp	/^ActionExploreAvoidFrontNear::ActionExploreAvoidFrontNear(double threshold):$/;"	f	class:ActionExploreAvoidFrontNear
+ActionExploreNavigateNear	include/ActionExploreNavigateNear.h	/^class ActionExploreNavigateNear : public ArAction {$/;"	c
+ActionExploreNavigateNear	src/ActionExploreNavigateNear.cpp	/^ActionExploreNavigateNear::ActionExploreNavigateNear(double threshold):$/;"	f	class:ActionExploreNavigateNear
 ActionExploreVelocity	include/ActionExploreVelocity.h	/^class ActionExploreVelocity : public ArAction {$/;"	c
 ActionExploreVelocity	src/ActionExploreVelocity.cpp	/^ActionExploreVelocity::ActionExploreVelocity(double maxSpeed, double stopDistance):$/;"	f	class:ActionExploreVelocity
+NAVBOTUTIL	include/NavBotUtil.h	2;"	d
 NavBot_config	Makefile	/^  NavBot_config = release$/;"	m
 PROJECTS	Makefile	/^PROJECTS := NavBot$/;"	m
 SILENT	Makefile	/^  SILENT = @$/;"	m
 config	Makefile	/^  config=release$/;"	m
-fire	src/ActionExploreAvoid.cpp	/^ArActionDesired *ActionExploreAvoid::fire(ArActionDesired currentDesired) {$/;"	f	class:ActionExploreAvoid
+fire	src/ActionExploreAvoidFrontNear.cpp	/^ArActionDesired *ActionExploreAvoidFrontNear::fire(ArActionDesired currentDesired) {$/;"	f	class:ActionExploreAvoidFrontNear
+fire	src/ActionExploreNavigateNear.cpp	/^ArActionDesired *ActionExploreNavigateNear::fire(ArActionDesired currentDesired) {$/;"	f	class:ActionExploreNavigateNear
 fire	src/ActionExploreVelocity.cpp	/^ArActionDesired *ActionExploreVelocity::fire(ArActionDesired currentDesired) {$/;"	f	class:ActionExploreVelocity
+getHypotenuseLength	src/NavBotUtil.cpp	/^    double getHypotenuseLength(double oppositeLength, double HypotenuseOppositeAngle) {$/;"	f	namespace:utils
+getOppositeAngle	src/NavBotUtil.cpp	/^    double getOppositeAngle(double hypotenuseLength, double oppositeLength, double hypotenuseOppositeAngle) {$/;"	f	namespace:utils
 main	src/NavBot.cpp	/^int main(int argc, char **argv) {$/;"	f
-myDesired	include/ActionExploreAvoid.h	/^        ArActionDesired myDesired;$/;"	m	class:ActionExploreAvoid
+myDesired	include/ActionExploreAvoidFrontNear.h	/^        ArActionDesired myDesired;$/;"	m	class:ActionExploreAvoidFrontNear
+myDesired	include/ActionExploreNavigateNear.h	/^        ArActionDesired myDesired;$/;"	m	class:ActionExploreNavigateNear
 myDesired	include/ActionExploreVelocity.h	/^        ArActionDesired myDesired;$/;"	m	class:ActionExploreVelocity
 myMaxSpeed	include/ActionExploreVelocity.h	/^        double myMaxSpeed;$/;"	m	class:ActionExploreVelocity
-mySonar	include/ActionExploreAvoid.h	/^        ArRangeDevice *mySonar;$/;"	m	class:ActionExploreAvoid
+mySonar	include/ActionExploreAvoidFrontNear.h	/^        ArRangeDevice *mySonar;$/;"	m	class:ActionExploreAvoidFrontNear
+mySonar	include/ActionExploreNavigateNear.h	/^        ArRangeDevice *mySonar;$/;"	m	class:ActionExploreNavigateNear
 mySonar	include/ActionExploreVelocity.h	/^        ArRangeDevice *mySonar;$/;"	m	class:ActionExploreVelocity
 myStopDistance	include/ActionExploreVelocity.h	/^        double myStopDistance;$/;"	m	class:ActionExploreVelocity
-myTurnAmount	include/ActionExploreAvoid.h	/^        double myTurnAmount;$/;"	m	class:ActionExploreAvoid
-myTurnThreshold	include/ActionExploreAvoid.h	/^        double myTurnThreshold;$/;"	m	class:ActionExploreAvoid
-myTurning	include/ActionExploreAvoid.h	/^        int myTurning;$/;"	m	class:ActionExploreAvoid
-setRobot	src/ActionExploreAvoid.cpp	/^void ActionExploreAvoid::setRobot(ArRobot *robot) {$/;"	f	class:ActionExploreAvoid
+myThreshold	include/ActionExploreAvoidFrontNear.h	/^        double myThreshold;$/;"	m	class:ActionExploreAvoidFrontNear
+myThreshold	include/ActionExploreNavigateNear.h	/^        double myThreshold;$/;"	m	class:ActionExploreNavigateNear
+setRobot	src/ActionExploreAvoidFrontNear.cpp	/^void ActionExploreAvoidFrontNear::setRobot(ArRobot *robot) {$/;"	f	class:ActionExploreAvoidFrontNear
+setRobot	src/ActionExploreNavigateNear.cpp	/^void ActionExploreNavigateNear::setRobot(ArRobot *robot) {$/;"	f	class:ActionExploreNavigateNear
 setRobot	src/ActionExploreVelocity.cpp	/^void ActionExploreVelocity::setRobot(ArRobot *robot) {$/;"	f	class:ActionExploreVelocity
-~ActionExploreAvoid	include/ActionExploreAvoid.h	/^        virtual ~ActionExploreAvoid(void){};$/;"	f	class:ActionExploreAvoid
+upperBoundClamp	src/NavBotUtil.cpp	/^    double upperBoundClamp(double val, double max) {$/;"	f	namespace:utils
+utils	include/NavBotUtil.h	/^namespace utils {$/;"	n
+utils	src/NavBotUtil.cpp	/^namespace utils {$/;"	n	file:
+~ActionExploreAvoidFrontNear	include/ActionExploreAvoidFrontNear.h	/^        virtual ~ActionExploreAvoidFrontNear(void){};$/;"	f	class:ActionExploreAvoidFrontNear
+~ActionExploreNavigateNear	include/ActionExploreNavigateNear.h	/^        virtual ~ActionExploreNavigateNear(void){};$/;"	f	class:ActionExploreNavigateNear
 ~ActionExploreVelocity	include/ActionExploreVelocity.h	/^        virtual ~ActionExploreVelocity(void){};$/;"	f	class:ActionExploreVelocity

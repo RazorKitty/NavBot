@@ -1,6 +1,8 @@
-#include "Aria.h"
 #include "ActionExploreVelocity.h"
-#include "ActionExploreAvoid.h"
+#include "ActionExploreAvoidFrontNear.h"
+#include "ActionExploreNavigateNear.h"
+#include "Aria.h"
+#include "c++/8.2.0/iostream"
 
 int main(int argc, char **argv) {
     Aria::init();
@@ -32,38 +34,28 @@ int main(int argc, char **argv) {
     Aria::setKeyHandler(&keyHandler);
     robot.attachKeyHandler(&keyHandler);
 
-    puts("This program will make the robot wander around. It uses some avoidance\n"
-    "actions if obstacles are detected, otherwise it just has a\n"
-    "constant forward velocity.\n\nPress CTRL-C or Escape to exit.");
+    std::cout << "Navbot Enabled\n" << std::endl;
 
     ArSonarDevice sonar;
     robot.addRangeDevice(&sonar);
 
     robot.runAsync(true);
 
-    // turn on the motors, turn off amigobot sounds
     robot.enableMotors();
     robot.comInt(ArCommands::SOUNDTOG, 0);
 
-    // add a set of actions that combine together to effect the wander behavior
     ArActionStallRecover recover;
     ArActionBumpers bumpers;
-    //ArActionAvoidFront avoidFrontNear("Avoid Front Near", 225, 0);
-    //ArActionAvoidFront avoidFrontFar;
-    //ArActionConstantVelocity constantVelocity("Constant Velocity", 400);
     
-    ActionExploreVelocity expVel(500, 1000);
-    ActionExploreAvoid expAvd(2000, 3.6);
+    ActionExploreVelocity exploreVelocity(500, 500);
+    ActionExploreAvoidFrontNear exploreAvoidFrontNear(750);
+    ActionExploreNavigateNear exploreNavigateNear(1000);
     
     robot.addAction(&recover, 100);
     robot.addAction(&bumpers, 75);
-    //robot.addAction(&avoidFrontNear, 50);
-    //robot.addAction(&avoidFrontFar, 49);
-    //robot.addAction(&constantVelocity, 25);
-
-    robot.addAction(&expAvd, 26);
-    robot.addAction(&expVel, 25);
-    // wait for robot task loop to end before exiting the program
+    robot.addAction(&exploreAvoidFrontNear, 50);
+    robot.addAction(&exploreNavigateNear, 40);
+    robot.addAction(&exploreVelocity, 30);
     robot.waitForRunExit();
 
     Aria::exit(0);

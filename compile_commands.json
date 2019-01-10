@@ -8,11 +8,26 @@
             "-Iinclude", 
             "-m64", 
             "-o", 
-            "obj/ActionExploreAvoid.o", 
-            "src/ActionExploreAvoid.cpp"
+            "obj/ActionExploreNavigateNear.o", 
+            "src/ActionExploreNavigateNear.cpp"
         ], 
         "directory": "/home/william/Projects/FYP/NavBot", 
-        "file": "src/ActionExploreAvoid.cpp"
+        "file": "src/ActionExploreNavigateNear.cpp"
+    }, 
+    {
+        "arguments": [
+            "g++", 
+            "-c", 
+            "-I/usr/local/Aria/include", 
+            "-I/usr/local/Aria/ArNetworking/include", 
+            "-Iinclude", 
+            "-m64", 
+            "-o", 
+            "obj/ActionExploreAvoidFrontNear.o", 
+            "src/ActionExploreAvoidFrontNear.cpp"
+        ], 
+        "directory": "/home/william/Projects/FYP/NavBot", 
+        "file": "src/ActionExploreAvoidFrontNear.cpp"
     }, 
     {
         "arguments": [
@@ -43,5 +58,20 @@
         ], 
         "directory": "/home/william/Projects/FYP/NavBot", 
         "file": "src/NavBot.cpp"
+    }, 
+    {
+        "arguments": [
+            "g++", 
+            "-c", 
+            "-I/usr/local/Aria/include", 
+            "-I/usr/local/Aria/ArNetworking/include", 
+            "-Iinclude", 
+            "-m64", 
+            "-o", 
+            "obj/NavBotUtil.o", 
+            "src/NavBotUtil.cpp"
+        ], 
+        "directory": "/home/william/Projects/FYP/NavBot", 
+        "file": "src/NavBotUtil.cpp"
     }
 ]

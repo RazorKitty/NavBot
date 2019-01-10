@@ -28,12 +28,12 @@ ArActionDesired *ActionExploreVelocity::fire(ArActionDesired currentDesired) {
         return NULL;
     }
     // get the range of the sonar
-    range = mySonar->currentReadingPolar(-12, 12) - myRobot->getRobotRadius();
+    range = mySonar->currentReadingPolar(-20, 20) - myRobot->getRobotRadius();
     // if the range is greater than the stop distance, find some speed to go
     if (range > myStopDistance) {
         myDesired.setVel(myMaxSpeed);
     } else {
-        myDesired.setVel(0);
+        myDesired.setVel(myMaxSpeed*(range/myStopDistance));
     }
     // return a pointer to the actionDesired to the resolver to make our request
     return &myDesired;

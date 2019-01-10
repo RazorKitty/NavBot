@@ -42,7 +42,9 @@ links {
 }
 
 files {
+    'src/NavBotUtil.cpp',
     'src/ActionExploreVelocity.cpp',
-    'src/ActionExploreAvoid.cpp',
+    'src/ActionExploreAvoidFrontNear.cpp',
+    'src/ActionExploreNavigateNear.cpp',
     'src/NavBot.cpp'
 }
