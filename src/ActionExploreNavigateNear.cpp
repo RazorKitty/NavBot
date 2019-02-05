@@ -60,7 +60,7 @@ ArActionDesired *ActionExploreNavigateNear::fire(ArActionDesired currentDesired)
         
         oppositeAjdacentAngle = utils::getOppositeAngle(hypotenuseLength, oppositeLength, hypotenuseOppositeAngle);
         myDesired.setDeltaHeading((oppositeAjdacentAngle*2)*direction);
-        myDesired.setVel(200);
+//        myDesired.setVel(200);
     }
 
 

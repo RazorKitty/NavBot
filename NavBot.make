@@ -24,7 +24,7 @@ ifeq ($(config),release)
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   LIBS += -lAria -lArNetworking
   LDDEPS +=
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -L/usr/local/Aria/lib -m64 -s
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/local/Aria/lib -L/usr/lib64 -m64 -s
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
   endef
@@ -48,23 +48,33 @@ RESOURCES := \
 
 CUSTOMFILES := \
 
-SHELLTYPE := msdos
-ifeq (,$(ComSpec)$(COMSPEC))
-  SHELLTYPE := posix
-endif
-ifeq (/bin,$(findstring /bin,$(SHELL)))
-  SHELLTYPE := posix
+SHELLTYPE := posix
+ifeq (.exe,$(findstring .exe,$(ComSpec)))
+	SHELLTYPE := msdos
 endif
 
-$(TARGET): $(GCH) ${CUSTOMFILES} $(OBJECTS) $(LDDEPS) $(RESOURCES)
+$(TARGET): $(GCH) ${CUSTOMFILES} $(OBJECTS) $(LDDEPS) $(RESOURCES) | $(TARGETDIR)
 	@echo Linking NavBot
+	$(SILENT) $(LINKCMD)
+	$(POSTBUILDCMDS)
+
+$(CUSTOMFILES): | $(OBJDIR)
+
+$(TARGETDIR):
+	@echo Creating $(TARGETDIR)
 ifeq (posix,$(SHELLTYPE))
 	$(SILENT) mkdir -p $(TARGETDIR)
 else
 	$(SILENT) mkdir $(subst /,\\,$(TARGETDIR))
 endif
-	$(SILENT) $(LINKCMD)
-	$(POSTBUILDCMDS)
+
+$(OBJDIR):
+	@echo Creating $(OBJDIR)
+ifeq (posix,$(SHELLTYPE))
+	$(SILENT) mkdir -p $(OBJDIR)
+else
+	$(SILENT) mkdir $(subst /,\\,$(OBJDIR))
+endif
 
 clean:
 	@echo Cleaning NavBot
@@ -83,56 +93,28 @@ prelink:
 	$(PRELINKCMDS)
 
 ifneq (,$(PCH))
-$(OBJECTS): $(GCH) $(PCH)
-$(GCH): $(PCH)
+$(OBJECTS): $(GCH) $(PCH) | $(OBJDIR)
+$(GCH): $(PCH) | $(OBJDIR)
 	@echo $(notdir $<)
-ifeq (posix,$(SHELLTYPE))
-	$(SILENT) mkdir -p $(OBJDIR)
-else
-	$(SILENT) mkdir $(subst /,\\,$(OBJDIR))
-endif
 	$(SILENT) $(CXX) -x c++-header $(ALL_CXXFLAGS) -o "$@" -MF "$(@:%.gch=%.d)" -c "$<"
+else
+$(OBJECTS): | $(OBJDIR)
 endif
 
 $(OBJDIR)/ActionExploreAvoidFrontNear.o: src/ActionExploreAvoidFrontNear.cpp
 	@echo $(notdir $<)
-ifeq (posix,$(SHELLTYPE))
-	$(SILENT) mkdir -p $(OBJDIR)
-else
-	$(SILENT) mkdir $(subst /,\\,$(OBJDIR))
-endif
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/ActionExploreNavigateNear.o: src/ActionExploreNavigateNear.cpp
 	@echo $(notdir $<)
-ifeq (posix,$(SHELLTYPE))
-	$(SILENT) mkdir -p $(OBJDIR)
-else
-	$(SILENT) mkdir $(subst /,\\,$(OBJDIR))
-endif
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/ActionExploreVelocity.o: src/ActionExploreVelocity.cpp
 	@echo $(notdir $<)
-ifeq (posix,$(SHELLTYPE))
-	$(SILENT) mkdir -p $(OBJDIR)
-else
-	$(SILENT) mkdir $(subst /,\\,$(OBJDIR))
-endif
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/NavBot.o: src/NavBot.cpp
 	@echo $(notdir $<)
-ifeq (posix,$(SHELLTYPE))
-	$(SILENT) mkdir -p $(OBJDIR)
-else
-	$(SILENT) mkdir $(subst /,\\,$(OBJDIR))
-endif
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/NavBotUtil.o: src/NavBotUtil.cpp
 	@echo $(notdir $<)
-ifeq (posix,$(SHELLTYPE))
-	$(SILENT) mkdir -p $(OBJDIR)
-else
-	$(SILENT) mkdir $(subst /,\\,$(OBJDIR))
-endif
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 
 -include $(OBJECTS:%.o=%.d)
