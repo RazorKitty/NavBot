@@ -1,0 +1,2 @@
+#!/bin/zsh
+premake5 gmake && ctags ./ && make && ./bin/Release/NavBot

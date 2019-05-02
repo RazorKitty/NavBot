@@ -2,9 +2,10 @@
 #include "ActionExploreAvoidFrontNear.h"
 #include "ActionExploreNavigateNear.h"
 #include "Aria.h"
-#include "c++/8.2.0/iostream"
+#include "iostream"
 
 int main(int argc, char **argv) {
+    /* initalize robot  */
     Aria::init();
     ArArgumentParser argParser(&argc, argv);
     argParser.loadDefaultArguments();
