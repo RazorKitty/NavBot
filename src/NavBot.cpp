@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
     ArActionBumpers bumpers;
     
     ActionExploreVelocity exploreVelocity(500, 500);
-    ActionExploreAvoidFrontNear exploreAvoidFrontNear(750);
+    ActionExploreAvoidFrontNear exploreAvoidFrontNear(1000);
     ActionExploreNavigateNear exploreNavigateNear(1000);
     
     robot.addAction(&recover, 100);
