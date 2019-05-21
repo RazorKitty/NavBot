@@ -12,5 +12,16 @@ class ActionExploreNavigateNear : public ArAction {
         ArRangeDevice *mySonar;
         ArActionDesired myDesired;
         double myThreshold;
+        int direction;
+        double leftOppositeOffsetAngle;
+        double leftOppositeLength;
+        double rightOppositeOffsetAngle;
+        double rightOppositeLength;
+        double oppositeLength;
+        double oppositeOffsetAngle;
+        double hypotenuseLength;
+        double hypotenuseOffsetAngle;
+        double hypotenuseOppositeAngle;
+        double oppositeAjdacentAngle;
 };
 #endif 

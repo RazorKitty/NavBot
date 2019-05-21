@@ -21,7 +21,6 @@ void ActionExploreVelocity::setRobot(ArRobot *robot) {
 }
 
 ArActionDesired *ActionExploreVelocity::fire(ArActionDesired currentDesired) {
-    double range;
     myDesired.reset();
     if (mySonar == NULL) {
         deactivate();

@@ -28,14 +28,11 @@ ArActionDesired *ActionExploreAvoidFrontNear::fire(ArActionDesired currentDesire
         return NULL;
     }
 
-    double hypotenuseOffsetAngle;
-    double hypotenuseLength = mySonar->currentReadingPolar(-20, 20, &hypotenuseOffsetAngle);
+    hypotenuseLength = mySonar->currentReadingPolar(-20, 20, &hypotenuseOffsetAngle);
 
     if (hypotenuseLength < myThreshold) {
-        int direction = 0;
-        double leftOppositeOffsetAngle, rightOppositeOffsetAngle, oppositeLength, oppositeOffsetAngle, hypotenuseOppositeAngle;
-        double leftOppositeLength = mySonar->currentReadingPolar(21, 99, &leftOppositeOffsetAngle);
-        double rightOppositeLength = mySonar->currentReadingPolar(-99, -21, &rightOppositeOffsetAngle); 
+        leftOppositeLength = mySonar->currentReadingPolar(21, 99, &leftOppositeOffsetAngle);
+        rightOppositeLength = mySonar->currentReadingPolar(-99, -21, &rightOppositeOffsetAngle); 
         if (leftOppositeLength < rightOppositeLength) {
             oppositeLength = leftOppositeLength;
             oppositeOffsetAngle = leftOppositeOffsetAngle;

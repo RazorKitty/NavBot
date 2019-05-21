@@ -13,5 +13,6 @@ class ActionExploreVelocity : public ArAction {
         ArActionDesired myDesired;
         double myMaxSpeed;
         double myStopDistance;
+        double range;
 };
 #endif

@@ -49,13 +49,13 @@ int main(int argc, char **argv) {
     ArActionBumpers bumpers;
     
     ActionExploreVelocity exploreVelocity(500, 500);
-    ActionExploreAvoidFrontNear exploreAvoidFrontNear(1000);
-    ActionExploreNavigateNear exploreNavigateNear(1000);
+    ActionExploreAvoidFrontNear exploreAvoidFrontNear(1500);
+    ActionExploreNavigateNear exploreNavigateNear(2000);
     
     robot.addAction(&recover, 100);
     robot.addAction(&bumpers, 75);
     robot.addAction(&exploreAvoidFrontNear, 50);
-    robot.addAction(&exploreNavigateNear, 40);
+    robot.addAction(&exploreNavigateNear, 50);
     robot.addAction(&exploreVelocity, 30);
     robot.waitForRunExit();
 

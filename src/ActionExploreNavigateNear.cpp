@@ -26,21 +26,10 @@ ArActionDesired *ActionExploreNavigateNear::fire(ArActionDesired currentDesired)
         deactivate();
         return NULL;
     }
-    int direction = 0;
-    double leftOppositeOffsetAngle;
-    double leftOppositeLength = mySonar->currentReadingPolar(81, 99, &leftOppositeOffsetAngle);
 
-    double rightOppositeOffsetAngle;
-    double rightOppositeLength = mySonar->currentReadingPolar(-99, -81, &rightOppositeOffsetAngle);
-    
-    double oppositeLength;
-    double oppositeOffsetAngle;
+    leftOppositeLength = mySonar->currentReadingPolar(81, 99, &leftOppositeOffsetAngle);
 
-    double hypotenuseLength;
-    double hypotenuseOffsetAngle;
-    double hypotenuseOppositeAngle;
-
-    double oppositeAjdacentAngle;
+    rightOppositeLength = mySonar->currentReadingPolar(-99, -81, &rightOppositeOffsetAngle);
     
     if (leftOppositeLength < rightOppositeLength) {
         oppositeLength = leftOppositeLength;

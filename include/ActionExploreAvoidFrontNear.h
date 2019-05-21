@@ -12,5 +12,15 @@ class ActionExploreAvoidFrontNear : public ArAction {
         ArRangeDevice *mySonar;
         ArActionDesired myDesired;
         double myThreshold;
-};
+        int direction;
+        double hypotenuseLength;
+        double hypotenuseOffsetAngle;
+        double leftOppositeOffsetAngle;
+        double rightOppositeOffsetAngle;
+        double oppositeLength;
+        double oppositeOffsetAngle;
+        double hypotenuseOppositeAngle;
+        double leftOppositeLength;
+        double rightOppositeLength;
+};  
 #endif
