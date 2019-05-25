@@ -1,6 +1,6 @@
 #ifndef ACTIONEXPLOREVELOCITY
 #define ACTIONEXPLOREVELOCITY 
-#include "Aria.h"
+#include <Aria/Aria.h>
 
 class ActionExploreVelocity : public ArAction {
     public:

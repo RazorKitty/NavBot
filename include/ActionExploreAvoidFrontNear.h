@@ -1,6 +1,6 @@
 #ifndef ACTIONEXPLOREAVOIDFRONTNEAR
 #define ACTIONEXPLOREAVOIDFRONTNEAR 
-#include "Aria.h"
+#include <Aria/Aria.h>
 
 class ActionExploreAvoidFrontNear : public ArAction {
     public:

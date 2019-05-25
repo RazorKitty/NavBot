@@ -1,5 +1,5 @@
 #include "ActionExploreVelocity.h"
-#include "Aria.h"
+#include <Aria/Aria.h>
 
 ActionExploreVelocity::ActionExploreVelocity(double maxSpeed, double stopDistance):
     ArAction ("exploreVelocity"),

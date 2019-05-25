@@ -1,6 +1,6 @@
 #ifndef ACTOINEXPLORENAVIGATENEAR
 #define ACTOINEXPLORENAVIGATENEAR 
-#include "Aria.h"
+#include <Aria/Aria.h>
 
 class ActionExploreNavigateNear : public ArAction {
     public:

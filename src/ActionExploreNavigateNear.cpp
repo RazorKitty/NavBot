@@ -1,6 +1,6 @@
 #include "ActionExploreNavigateNear.h"
 #include "NavBotUtil.h"
-#include "Aria.h"
+#include <Aria/Aria.h>
 #include "math.h"
 
 ActionExploreNavigateNear::ActionExploreNavigateNear(double threshold):

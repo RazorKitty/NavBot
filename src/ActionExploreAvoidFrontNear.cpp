@@ -1,7 +1,7 @@
 #include "ActionExploreAvoidFrontNear.h"
 #include "NavBotUtil.h"
-#include "Aria.h"
-#include "Aria/ariaUtil.h"
+#include <Aria/Aria.h>
+#include <Aria/ariaUtil.h>
 #include "math.h"
 
 ActionExploreAvoidFrontNear::ActionExploreAvoidFrontNear(double threshold):

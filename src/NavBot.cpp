@@ -1,7 +1,7 @@
 #include "ActionExploreVelocity.h"
 #include "ActionExploreAvoidFrontNear.h"
 #include "ActionExploreNavigateNear.h"
-#include "Aria.h"
+#include <Aria/Aria.h>
 #include "iostream"
 
 int main(int argc, char **argv) {
