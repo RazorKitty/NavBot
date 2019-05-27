@@ -1,10 +1,15 @@
 #ifndef SENSORINTERPRETTASKSCONTAINER
-#define SENSORINTERPRETTASKSCONTAINER
+#define SENSORINTERPRETTASKSCONTAINER 
 #include <Aria/Aria.h>
 #include <Aria/ArMap.h>
 
-class SesnsorInterpretTasksContainer {
+class SensorInterpretTasksContainer {
     public:
-        void DetectLines(ArRobot robot, ArMap map);
+        SensorInterpretTasksContainer(ArRobot*, ArMap*);
+        ~SensorInterpretTasksContainer(void){};
+        void SensePoint(void);
+    private:
+        ArRobot *myRobot;
+        ArMap *myMap;
 };
-#endif
+#endif 

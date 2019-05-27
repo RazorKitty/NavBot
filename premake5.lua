@@ -22,23 +22,16 @@ libdirs {
 includedirs {
     '/usr/local/Aria/include',
     '/usr/local/Aria/ArNetworking/include',
---    '/usr/local/Arnl/include',
     'include'
 }
 
 libdirs {
     '/usr/local/Aria/lib',
---    '/usr/local/Arnl/lib'
 }
 
 links {
     'Aria',
     'ArNetworking',
---    'BaseArnl',
---    'Arnl',
---    'SonArnl',
---    'ArNetworkingForArnl',
---    'AriaForArnl'
 }
 
 files {
@@ -46,5 +39,6 @@ files {
     'src/ActionExploreVelocity.cpp',
     'src/ActionExploreAvoidFrontNear.cpp',
     'src/ActionExploreNavigateNear.cpp',
+    'src/SensorInterpretTaskContainer.cpp',
     'src/NavBot.cpp'
 }

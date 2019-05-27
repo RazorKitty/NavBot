@@ -1,0 +1,2 @@
+#!/bin/zsh
+premake5 gmake && premake5 export-compile-commands && ctags ./ && make clean && make

@@ -28,4 +28,10 @@
             "file": "/home/william/Projects/FYP/NavBot/src/NavBotUtil.cpp",
             "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -I/home/william/Projects/FYP/NavBot/include -m64 -o /home/william/Projects/FYP/NavBot/obj/NavBotUtil.o -MF /home/william/Projects/FYP/NavBot/obj/NavBotUtil.d -c /home/william/Projects/FYP/NavBot/src/NavBotUtil.cpp"
           }
+,
+          {
+            "directory": "/home/william/Projects/FYP/NavBot",
+            "file": "/home/william/Projects/FYP/NavBot/src/SensorInterpretTaskContainer.cpp",
+            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -I/home/william/Projects/FYP/NavBot/include -m64 -o /home/william/Projects/FYP/NavBot/obj/SensorInterpretTaskContainer.o -MF /home/william/Projects/FYP/NavBot/obj/SensorInterpretTaskContainer.d -c /home/william/Projects/FYP/NavBot/src/SensorInterpretTaskContainer.cpp"
+          }
 ]

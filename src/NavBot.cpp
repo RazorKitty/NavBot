@@ -1,8 +1,12 @@
 #include "ActionExploreVelocity.h"
 #include "ActionExploreAvoidFrontNear.h"
 #include "ActionExploreNavigateNear.h"
+#include "SensorInterpretTasksContainer.h"
 #include <Aria/Aria.h>
-#include "iostream"
+#include <Aria/ArMap.h>
+#include <Aria/ArFunctor.h>
+#include <iostream>
+
 
 int main(int argc, char **argv) {
     /* initalize robot  */
@@ -23,7 +27,6 @@ int main(int argc, char **argv) {
         }
     }
 
-
     // Trigger argument parsing
     if (!Aria::parseArgs() || !argParser.checkHelpAndWarnUnparsed()) {
         Aria::logOptions();
@@ -34,6 +37,16 @@ int main(int argc, char **argv) {
     ArKeyHandler keyHandler;
     Aria::setKeyHandler(&keyHandler);
     robot.attachKeyHandler(&keyHandler);
+    
+    // Make a map
+    ArMap map("./", true, "Files", "Map", "Map of the enviroment", true, ArPriority::IMPORTANT, NULL, 100);
+    
+    // Attach map and robot to instance of class for slam algorithm implementation
+    SensorInterpretTasksContainer senceInterpContainer(&robot, &map);
+    // Wrap in functor for invocation
+    ArFunctorC<SensorInterpretTasksContainer> functor(&senceInterpContainer, &SensorInterpretTasksContainer::SensePoint);
+    
+    robot.addSensorInterpTask("SensorInterpretTask", 100, &functor);
 
     std::cout << "Navbot Enabled\n" << std::endl;
 

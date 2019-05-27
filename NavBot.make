@@ -43,6 +43,7 @@ OBJECTS := \
 	$(OBJDIR)/ActionExploreVelocity.o \
 	$(OBJDIR)/NavBot.o \
 	$(OBJDIR)/NavBotUtil.o \
+	$(OBJDIR)/SensorInterpretTaskContainer.o \
 
 RESOURCES := \
 
@@ -114,6 +115,9 @@ $(OBJDIR)/NavBot.o: src/NavBot.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/NavBotUtil.o: src/NavBotUtil.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/SensorInterpretTaskContainer.o: src/SensorInterpretTaskContainer.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 
