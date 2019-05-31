@@ -1,4 +1,4 @@
-obj/SensorInterpretTaskContainer.o: src/SensorInterpretTaskContainer.cpp \
- include/SensorInterpretTasksContainer.h
+obj/SensorInterpretTaskContainer.o: SensorInterpretTaskContainer.cpp \
+ SensorInterpretTasksContainer.h
 
-include/SensorInterpretTasksContainer.h:
+SensorInterpretTasksContainer.h:

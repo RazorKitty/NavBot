@@ -1,0 +1,5 @@
+slam is not an alogirimthm but a concept
+many alogirthms have been developed to attempt slam
+originally developed by hugh durrand-whyte and john j. leonard based on work by smith self and cheeseman
+was smal changed to slam for more impact (badum-ts)
+

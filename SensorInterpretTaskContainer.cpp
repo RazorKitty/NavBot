@@ -9,5 +9,9 @@ SensorInterpretTasksContainer::SensorInterpretTasksContainer(ArRobot *robot, ArM
 {}
 
 void SensorInterpretTasksContainer::SensePoint(void) {
-    std::cout << "Sensing point" << std::endl;
+    //std::cout << "Sensing point" << std::endl;
+    //landmark extraction
+    //get robot pose,
+    //get sensor data
+    //
 }

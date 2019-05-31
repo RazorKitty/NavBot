@@ -1,6 +1,6 @@
-obj/ActionExploreAvoidFrontNear.o: src/ActionExploreAvoidFrontNear.cpp \
- include/ActionExploreAvoidFrontNear.h include/NavBotUtil.h
+obj/ActionExploreAvoidFrontNear.o: ActionExploreAvoidFrontNear.cpp \
+ ActionExploreAvoidFrontNear.h NavBotUtil.h
 
-include/ActionExploreAvoidFrontNear.h:
+ActionExploreAvoidFrontNear.h:
 
-include/NavBotUtil.h:
+NavBotUtil.h:

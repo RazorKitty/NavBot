@@ -16,7 +16,7 @@ ifeq ($(config),release)
   TARGET = $(TARGETDIR)/NavBot
   OBJDIR = obj
   DEFINES +=
-  INCLUDES += -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -Iinclude
+  INCLUDES += -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
   ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64
@@ -102,22 +102,22 @@ else
 $(OBJECTS): | $(OBJDIR)
 endif
 
-$(OBJDIR)/ActionExploreAvoidFrontNear.o: src/ActionExploreAvoidFrontNear.cpp
+$(OBJDIR)/ActionExploreAvoidFrontNear.o: ActionExploreAvoidFrontNear.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/ActionExploreNavigateNear.o: src/ActionExploreNavigateNear.cpp
+$(OBJDIR)/ActionExploreNavigateNear.o: ActionExploreNavigateNear.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/ActionExploreVelocity.o: src/ActionExploreVelocity.cpp
+$(OBJDIR)/ActionExploreVelocity.o: ActionExploreVelocity.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/NavBot.o: src/NavBot.cpp
+$(OBJDIR)/NavBot.o: NavBot.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/NavBotUtil.o: src/NavBotUtil.cpp
+$(OBJDIR)/NavBotUtil.o: NavBotUtil.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/SensorInterpretTaskContainer.o: src/SensorInterpretTaskContainer.cpp
+$(OBJDIR)/SensorInterpretTaskContainer.o: SensorInterpretTaskContainer.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

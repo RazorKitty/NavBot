@@ -1,4 +1,4 @@
-obj/ActionExploreVelocity.o: src/ActionExploreVelocity.cpp \
- include/ActionExploreVelocity.h
+obj/ActionExploreVelocity.o: ActionExploreVelocity.cpp \
+ ActionExploreVelocity.h
 
-include/ActionExploreVelocity.h:
+ActionExploreVelocity.h:

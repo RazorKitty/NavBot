@@ -1,3 +1,3 @@
-obj/NavBotUtil.o: src/NavBotUtil.cpp include/NavBotUtil.h
+obj/NavBotUtil.o: NavBotUtil.cpp NavBotUtil.h
 
-include/NavBotUtil.h:
+NavBotUtil.h:

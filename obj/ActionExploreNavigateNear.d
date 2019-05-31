@@ -1,6 +1,6 @@
-obj/ActionExploreNavigateNear.o: src/ActionExploreNavigateNear.cpp \
- include/ActionExploreNavigateNear.h include/NavBotUtil.h
+obj/ActionExploreNavigateNear.o: ActionExploreNavigateNear.cpp \
+ ActionExploreNavigateNear.h NavBotUtil.h
 
-include/ActionExploreNavigateNear.h:
+ActionExploreNavigateNear.h:
 
-include/NavBotUtil.h:
+NavBotUtil.h:

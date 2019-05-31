@@ -1,12 +1,11 @@
-obj/NavBot.o: src/NavBot.cpp include/ActionExploreVelocity.h \
- include/ActionExploreAvoidFrontNear.h \
- include/ActionExploreNavigateNear.h \
- include/SensorInterpretTasksContainer.h
+obj/NavBot.o: NavBot.cpp ActionExploreVelocity.h \
+ ActionExploreAvoidFrontNear.h ActionExploreNavigateNear.h \
+ SensorInterpretTasksContainer.h
 
-include/ActionExploreVelocity.h:
+ActionExploreVelocity.h:
 
-include/ActionExploreAvoidFrontNear.h:
+ActionExploreAvoidFrontNear.h:
 
-include/ActionExploreNavigateNear.h:
+ActionExploreNavigateNear.h:
 
-include/SensorInterpretTasksContainer.h:
+SensorInterpretTasksContainer.h:

@@ -2,6 +2,8 @@
 #define SENSORINTERPRETTASKSCONTAINER 
 #include <Aria/Aria.h>
 #include <Aria/ArMap.h>
+#include <vector>
+
 
 class SensorInterpretTasksContainer {
     public:
@@ -11,5 +13,6 @@ class SensorInterpretTasksContainer {
     private:
         ArRobot *myRobot;
         ArMap *myMap;
+         
 };
 #endif 
