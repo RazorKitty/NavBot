@@ -3,16 +3,18 @@
 
 ActionExploreVelocity::ActionExploreVelocity(double maxSpeed, double stopDistance):
     ArAction ("exploreVelocity"),
+    mySonar(NULL),
     myMaxSpeed(maxSpeed),
-    myStopDistance(stopDistance),
-    mySonar(NULL)
+    myStopDistance(stopDistance)
 {
     setNextArgument(ArArg("maximumSpeedExploreVelocity", &myMaxSpeed, "maximum speed while exploring"));
     setNextArgument(ArArg("stopDistanceExploreVelocity", &myStopDistance, "minimum distance to stop"));
 }
 
 void ActionExploreVelocity::setRobot(ArRobot *robot) {
+    robot->lock();
     ArAction::setRobot(robot);
+    robot->unlock();
     mySonar = robot->findRangeDevice("sonar");
     if (mySonar == NULL) {
         ArLog::log(ArLog::Terse, "ActionExploreVelocity: setRobot: Warning: found no sonar, deactivating.");
@@ -27,7 +29,9 @@ ArActionDesired *ActionExploreVelocity::fire(ArActionDesired currentDesired) {
         return NULL;
     }
     // get the range of the sonar
+    mySonar->tryLockDevice();
     range = mySonar->currentReadingPolar(-21, 21) - myRobot->getRobotRadius();
+    mySonar->unlockDevice();
     // if the range is greater than the stop distance, find some speed to go
     if (range > myStopDistance) {
         myDesired.setVel(myMaxSpeed);
