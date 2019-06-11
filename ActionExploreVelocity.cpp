@@ -1,5 +1,4 @@
 #include "ActionExploreVelocity.h"
-#include <Aria/Aria.h>
 
 ActionExploreVelocity::ActionExploreVelocity(double maxSpeed, double stopDistance):
     ArAction ("exploreVelocity"),
@@ -29,7 +28,7 @@ ArActionDesired *ActionExploreVelocity::fire(ArActionDesired currentDesired) {
         return NULL;
     }
     // get the range of the sonar
-    mySonar->tryLockDevice();
+    mySonar->lockDevice();
     range = mySonar->currentReadingPolar(-21, 21) - myRobot->getRobotRadius();
     mySonar->unlockDevice();
     // if the range is greater than the stop distance, find some speed to go

@@ -1,7 +1,5 @@
 #include "ActionExploreAvoidFrontNear.h"
 #include "NavBotUtil.h"
-#include <Aria/Aria.h>
-#include <Aria/ariaUtil.h>
 #include <math.h>
 
 ActionExploreAvoidFrontNear::ActionExploreAvoidFrontNear(double threshold):
@@ -30,12 +28,12 @@ ArActionDesired *ActionExploreAvoidFrontNear::fire(ArActionDesired currentDesire
         return NULL;
     }
 
-    mySonar->tryLockDevice();
+    mySonar->lockDevice();
     hypotenuseLength = mySonar->currentReadingPolar(-20, 20, &hypotenuseOffsetAngle);
     mySonar->unlockDevice();
 
     if (hypotenuseLength < myThreshold) {
-        mySonar->tryLockDevice();
+        mySonar->lockDevice();
         leftOppositeLength = mySonar->currentReadingPolar(21, 99, &leftOppositeOffsetAngle);
         rightOppositeLength = mySonar->currentReadingPolar(-99, -21, &rightOppositeOffsetAngle); 
         mySonar->unlockDevice();

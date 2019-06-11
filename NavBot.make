@@ -41,10 +41,9 @@ OBJECTS := \
 	$(OBJDIR)/ActionExploreAvoidFrontNear.o \
 	$(OBJDIR)/ActionExploreNavigateNear.o \
 	$(OBJDIR)/ActionExploreVelocity.o \
-	$(OBJDIR)/AsyncTasksContainer.o \
-	$(OBJDIR)/MyArFunctorASyncTask.o \
 	$(OBJDIR)/NavBot.o \
 	$(OBJDIR)/NavBotUtil.o \
+	$(OBJDIR)/SensorSweepTask.o \
 
 RESOURCES := \
 
@@ -112,16 +111,13 @@ $(OBJDIR)/ActionExploreNavigateNear.o: ActionExploreNavigateNear.cpp
 $(OBJDIR)/ActionExploreVelocity.o: ActionExploreVelocity.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/AsyncTasksContainer.o: AsyncTasksContainer.cpp
-	@echo $(notdir $<)
-	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
-$(OBJDIR)/MyArFunctorASyncTask.o: MyArFunctorASyncTask.cpp
-	@echo $(notdir $<)
-	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/NavBot.o: NavBot.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/NavBotUtil.o: NavBotUtil.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/SensorSweepTask.o: SensorSweepTask.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 

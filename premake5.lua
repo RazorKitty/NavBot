@@ -25,7 +25,6 @@ files {
     'ActionExploreVelocity.cpp',
     'ActionExploreAvoidFrontNear.cpp',
     'ActionExploreNavigateNear.cpp',
-    'AsyncTasksContainer.cpp',
-    'MyArFunctorASyncTask.cpp',
+    'SensorSweepTask.cpp',
     'NavBot.cpp'
 }

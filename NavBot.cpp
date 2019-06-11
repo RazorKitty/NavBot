@@ -1,12 +1,9 @@
 #include "ActionExploreVelocity.h"
 #include "ActionExploreAvoidFrontNear.h"
 #include "ActionExploreNavigateNear.h"
-#include "AsyncTasksContainer.h"
-#include "MyArFunctorASyncTask.h"
+#include "SensorSweepTask.h"
 #include <Aria/Aria.h>
 #include <Aria/ArMap.h>
-#include <Aria/ArFunctor.h>
-#include <Aria/ArFunctorASyncTask.h>
 #include <iostream>
 
 
@@ -44,15 +41,6 @@ int main(int argc, char **argv) {
     ArMap map("./", true, "Files", "Map", "Map of the enviroment", true, ArPriority::IMPORTANT, NULL, 100);
     
     // Attach map and robot to instance of class for slam algorithm implementation
-    AsyncTasksContainer asynctasksContainer(&robot, &map);
-    //// Wrap in functor for invocation
-    ArFunctorC<AsyncTasksContainer>sensorSweepFunctor(&asynctasksContainer, &AsyncTasksContainer::SensorSweepTask);
-    ArFunctorC<AsyncTasksContainer>lineMakerFunctor(&asynctasksContainer, &AsyncTasksContainer::LineMakerTask);
-
-
-    MyArFunctorASyncTask sensorSweepTask(&sensorSweepFunctor);
-    MyArFunctorASyncTask lineMakerTask(&lineMakerFunctor);
-    
 
     std::cout << "Navbot Enabled\n" << std::endl;
 
@@ -61,8 +49,10 @@ int main(int argc, char **argv) {
 
     robot.runAsync(true);
 
+    SensorSweepTask sensorSweepTask(&robot, 1500);
     sensorSweepTask.runAsync();
-    //lineMakerTask.runAsync();
+
+
 
     robot.enableMotors();
     robot.comInt(ArCommands::SOUNDTOG, 0);

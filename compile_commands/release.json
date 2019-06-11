@@ -19,18 +19,6 @@
 ,
           {
             "directory": "/home/william/Projects/FYP/NavBot",
-            "file": "/home/william/Projects/FYP/NavBot/AsyncTasksContainer.cpp",
-            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/AsyncTasksContainer.o -MF /home/william/Projects/FYP/NavBot/obj/AsyncTasksContainer.d -c /home/william/Projects/FYP/NavBot/AsyncTasksContainer.cpp"
-          }
-,
-          {
-            "directory": "/home/william/Projects/FYP/NavBot",
-            "file": "/home/william/Projects/FYP/NavBot/MyArFunctorASyncTask.cpp",
-            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/MyArFunctorASyncTask.o -MF /home/william/Projects/FYP/NavBot/obj/MyArFunctorASyncTask.d -c /home/william/Projects/FYP/NavBot/MyArFunctorASyncTask.cpp"
-          }
-,
-          {
-            "directory": "/home/william/Projects/FYP/NavBot",
             "file": "/home/william/Projects/FYP/NavBot/NavBot.cpp",
             "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/NavBot.o -MF /home/william/Projects/FYP/NavBot/obj/NavBot.d -c /home/william/Projects/FYP/NavBot/NavBot.cpp"
           }
@@ -39,5 +27,11 @@
             "directory": "/home/william/Projects/FYP/NavBot",
             "file": "/home/william/Projects/FYP/NavBot/NavBotUtil.cpp",
             "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/NavBotUtil.o -MF /home/william/Projects/FYP/NavBot/obj/NavBotUtil.d -c /home/william/Projects/FYP/NavBot/NavBotUtil.cpp"
+          }
+,
+          {
+            "directory": "/home/william/Projects/FYP/NavBot",
+            "file": "/home/william/Projects/FYP/NavBot/SensorSweepTask.cpp",
+            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/SensorSweepTask.o -MF /home/william/Projects/FYP/NavBot/obj/SensorSweepTask.d -c /home/william/Projects/FYP/NavBot/SensorSweepTask.cpp"
           }
 ]

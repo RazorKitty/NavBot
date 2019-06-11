@@ -1,7 +1,6 @@
 #include "ActionExploreNavigateNear.h"
 #include "NavBotUtil.h"
-#include <Aria/Aria.h>
-#include "math.h"
+#include <math.h>
 
 ActionExploreNavigateNear::ActionExploreNavigateNear(double threshold):
     ArAction("exploreNavigateNear"),
@@ -29,7 +28,7 @@ ArActionDesired *ActionExploreNavigateNear::fire(ArActionDesired currentDesired)
         return NULL;
     }
 
-    mySonar->tryLockDevice();
+    mySonar->lockDevice();
     leftOppositeLength = mySonar->currentReadingPolar(81, 99, &leftOppositeOffsetAngle);
     rightOppositeLength = mySonar->currentReadingPolar(-99, -81, &rightOppositeOffsetAngle);
     mySonar->unlockDevice();
@@ -38,14 +37,14 @@ ArActionDesired *ActionExploreNavigateNear::fire(ArActionDesired currentDesired)
         oppositeLength = leftOppositeLength;
         oppositeOffsetAngle = leftOppositeOffsetAngle;
         direction = 1;
-        mySonar->tryLockDevice();
+        mySonar->lockDevice();
         hypotenuseLength = mySonar->currentReadingPolar(0, 50, &hypotenuseOffsetAngle);
         mySonar->unlockDevice();
     } else {
         oppositeLength = rightOppositeLength;
         oppositeOffsetAngle = rightOppositeOffsetAngle;
         direction = -1;
-        mySonar->tryLockDevice();
+        mySonar->lockDevice();
         hypotenuseLength = mySonar->currentReadingPolar(-50, 0, &hypotenuseOffsetAngle);
         mySonar->unlockDevice();
     }
