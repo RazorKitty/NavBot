@@ -10,15 +10,15 @@ SensorSweepTask::SensorSweepTask(ArRobot* robot_in, double maxRange_in):
     robot->unlock();
 }
 
-ArPose* SensorSweepTask::getNextPose(void) {
-    ArPose* pose = NULL;
+std::vector<ArPose*>* SensorSweepTask::getPoses(void) {
+    std::vector<ArPose*>* poses = new std::vector<ArPose*>();
     queueMutex.lock();
-    if (!poseQueue.empty()) { 
-        pose = poseQueue.front();
+    while(!poseQueue.empty()) {
+        poses->push_back(poseQueue.front());
         poseQueue.pop();
     }
     queueMutex.unlock();
-    return pose;
+    return poses;
 }
 
 void* SensorSweepTask::runThread(void* args) {

@@ -3,11 +3,12 @@
 #include <Aria/Aria.h>
 #include <Aria/ArASyncTask.h>
 #include <queue>
+#include <vector>
 
 class SensorSweepTask : public ArASyncTask {
     public:
         SensorSweepTask(ArRobot*, double);
-        ArPose* getNextPose(void);
+        std::vector<ArPose*>* getPoses(void);
         void* runThread(void*);
     private:
         ArRobot* robot;
