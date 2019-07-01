@@ -10,21 +10,25 @@ SensorSweepTask::SensorSweepTask(ArRobot* robot_in, double maxRange_in):
     robot->unlock();
 }
 
-std::vector<ArPose*>* SensorSweepTask::getPoses(void) {
-    std::vector<ArPose*>* poses = new std::vector<ArPose*>();
+void SensorSweepTask::getData(ArPose*** &pointPoses, ArPose** &robotPoses, int* length) {
     queueMutex.lock();
-    while(!poseQueue.empty()) {
-        poses->push_back(poseQueue.front());
-        poseQueue.pop();
+    *length = pointPoseQueue.size();
+    pointPoses = new ArPose**[*length];
+    robotPoses = new ArPose*[*length];
+    for (int i = 0; i < *length; ++i) {
+        pointPoses[i] = pointPoseQueue.front();
+        pointPoseQueue.pop();
+        robotPoses[i] = robotPoseQueue.front();
+        robotPoseQueue.pop();
     }
     queueMutex.unlock();
-    return poses;
 }
 
 void* SensorSweepTask::runThread(void* args) {
     while(this->getRunningWithLock()) {
         robot->lock();
-        currentPose = robot->getPose();
+
+        currentRobotPose = new ArPose(robot->getPose());
         robot->unlock();
         
 
@@ -37,17 +41,20 @@ void* SensorSweepTask::runThread(void* args) {
 
         //turn into poses
         //and queue items
+        
+        pointPoseArray = new ArPose*[8];
         for (int i = 0; i < 8; ++i) {
             if (sensorReadings[i][0] < maxRange) {
-                ArPose *pose = new ArPose(
-                        currentPose.getX()+sensorReadings[i][0]*sin(utils::wrapAngle(currentPose.getTh(), sensorReadings[i][1])*(M_PI/180.0)),
-                        currentPose.getY()+sensorReadings[i][0]*cos(utils::wrapAngle(currentPose.getTh(), sensorReadings[i][1])*(M_PI/180.0))
+                pointPoseArray[i] = new ArPose(
+                        currentRobotPose->getX()+sensorReadings[i][0]*sin(utils::wrapAngle(currentRobotPose->getTh(), sensorReadings[i][1])*(M_PI/180.0)),
+                        currentRobotPose->getY()+sensorReadings[i][0]*cos(utils::wrapAngle(currentRobotPose->getTh(), sensorReadings[i][1])*(M_PI/180.0))
                     );
-                queueMutex.lock();
-                poseQueue.push(pose);
-                queueMutex.unlock();
             }
         }
+        queueMutex.lock();
+        pointPoseQueue.push(pointPoseArray);
+        robotPoseQueue.push(currentRobotPose);
+        queueMutex.unlock();
     }
     return NULL;
 }

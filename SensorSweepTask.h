@@ -8,14 +8,16 @@
 class SensorSweepTask : public ArASyncTask {
     public:
         SensorSweepTask(ArRobot*, double);
-        std::vector<ArPose*>* getPoses(void);
+        void getData(ArPose***&, ArPose**&, int*);
         void* runThread(void*);
     private:
         ArRobot* robot;
         ArRangeDevice* sonar;
-        std::queue<ArPose*> poseQueue;
+        std::queue<ArPose**> pointPoseQueue;
+        std::queue<ArPose*> robotPoseQueue;
         ArMutex queueMutex;
-        ArPose currentPose;
+        ArPose* currentRobotPose;
+        ArPose** pointPoseArray;
         double maxRange;
         // these are hard coded as we only deal with one kind or robot, the amigobt
         double sensorPositions[8] {
