@@ -9,12 +9,13 @@
 
 class LineExtractionTask : public ArASyncTask {
     public:
-        LineExtractionTask(SensorSweepTask*);
+        LineExtractionTask(SensorSweepTask*, double);
         void* runThread(void*);
     private:
         double euclideanDistance;
         SensorSweepTask* sensorSweepTask;
         ArMutex clusterMutex;
-        std::vector<ArPose*> poses;
+        std::vector<ArPose*> robotPoses;
+        std::vector<ArPose**> pointPoses;
 };
 #endif
