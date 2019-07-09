@@ -19,6 +19,12 @@
 ,
           {
             "directory": "/home/william/Projects/FYP/NavBot",
+            "file": "/home/william/Projects/FYP/NavBot/LineExtractionTask.cpp",
+            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/LineExtractionTask.o -MF /home/william/Projects/FYP/NavBot/obj/LineExtractionTask.d -c /home/william/Projects/FYP/NavBot/LineExtractionTask.cpp"
+          }
+,
+          {
+            "directory": "/home/william/Projects/FYP/NavBot",
             "file": "/home/william/Projects/FYP/NavBot/NavBot.cpp",
             "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/NavBot.o -MF /home/william/Projects/FYP/NavBot/obj/NavBot.d -c /home/william/Projects/FYP/NavBot/NavBot.cpp"
           }

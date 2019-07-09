@@ -26,5 +26,6 @@ files {
     'ActionExploreAvoidFrontNear.cpp',
     'ActionExploreNavigateNear.cpp',
     'SensorSweepTask.cpp',
+    'LineExtractionTask.cpp',
     'NavBot.cpp'
 }

@@ -41,6 +41,7 @@ OBJECTS := \
 	$(OBJDIR)/ActionExploreAvoidFrontNear.o \
 	$(OBJDIR)/ActionExploreNavigateNear.o \
 	$(OBJDIR)/ActionExploreVelocity.o \
+	$(OBJDIR)/LineExtractionTask.o \
 	$(OBJDIR)/NavBot.o \
 	$(OBJDIR)/NavBotUtil.o \
 	$(OBJDIR)/SensorSweepTask.o \
@@ -109,6 +110,9 @@ $(OBJDIR)/ActionExploreNavigateNear.o: ActionExploreNavigateNear.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/ActionExploreVelocity.o: ActionExploreVelocity.cpp
+	@echo $(notdir $<)
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/LineExtractionTask.o: LineExtractionTask.cpp
 	@echo $(notdir $<)
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/NavBot.o: NavBot.cpp

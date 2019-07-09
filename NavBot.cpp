@@ -2,6 +2,7 @@
 #include "ActionExploreAvoidFrontNear.h"
 #include "ActionExploreNavigateNear.h"
 #include "SensorSweepTask.h"
+#include "LineExtractionTask.h"
 #include <Aria/Aria.h>
 #include <Aria/ArMap.h>
 #include <iostream>
@@ -49,9 +50,12 @@ int main(int argc, char **argv) {
 
     robot.runAsync(true);
 
-    SensorSweepTask sensorSweepTask(&robot, 1500);
-    sensorSweepTask.runAsync();
+    // made some changes
 
+    SensorSweepTask sensorSweepTask(&robot, 1500);
+    LineExtractionTask lineExtractionTask(&sensorSweepTask, 0.00, 0.00, 0);
+    sensorSweepTask.runAsync();
+    lineExtractionTask.runAsync();
 
 
     robot.enableMotors();
