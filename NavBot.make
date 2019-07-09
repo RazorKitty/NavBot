@@ -19,12 +19,12 @@ ifeq ($(config),release)
   INCLUDES += -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include
   FORCE_INCLUDE +=
   ALL_CPPFLAGS += $(CPPFLAGS) -MMD -MP $(DEFINES) $(INCLUDES)
-  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64
-  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64
+  ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS)
+  ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS)
   ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
   LIBS += -lAria -lArNetworking
   LDDEPS +=
-  ALL_LDFLAGS += $(LDFLAGS) -L/usr/local/Aria/lib -L/usr/lib64 -m64 -s
+  ALL_LDFLAGS += $(LDFLAGS) -L/usr/local/Aria/lib -s
   LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
   define PREBUILDCMDS
   endef

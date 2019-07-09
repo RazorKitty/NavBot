@@ -2,42 +2,42 @@
           {
             "directory": "/home/william/Projects/FYP/NavBot",
             "file": "/home/william/Projects/FYP/NavBot/ActionExploreAvoidFrontNear.cpp",
-            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/ActionExploreAvoidFrontNear.o -MF /home/william/Projects/FYP/NavBot/obj/ActionExploreAvoidFrontNear.d -c /home/william/Projects/FYP/NavBot/ActionExploreAvoidFrontNear.cpp"
+            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -o /home/william/Projects/FYP/NavBot/obj/ActionExploreAvoidFrontNear.o -MF /home/william/Projects/FYP/NavBot/obj/ActionExploreAvoidFrontNear.d -c /home/william/Projects/FYP/NavBot/ActionExploreAvoidFrontNear.cpp"
           }
 ,
           {
             "directory": "/home/william/Projects/FYP/NavBot",
             "file": "/home/william/Projects/FYP/NavBot/ActionExploreNavigateNear.cpp",
-            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/ActionExploreNavigateNear.o -MF /home/william/Projects/FYP/NavBot/obj/ActionExploreNavigateNear.d -c /home/william/Projects/FYP/NavBot/ActionExploreNavigateNear.cpp"
+            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -o /home/william/Projects/FYP/NavBot/obj/ActionExploreNavigateNear.o -MF /home/william/Projects/FYP/NavBot/obj/ActionExploreNavigateNear.d -c /home/william/Projects/FYP/NavBot/ActionExploreNavigateNear.cpp"
           }
 ,
           {
             "directory": "/home/william/Projects/FYP/NavBot",
             "file": "/home/william/Projects/FYP/NavBot/ActionExploreVelocity.cpp",
-            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/ActionExploreVelocity.o -MF /home/william/Projects/FYP/NavBot/obj/ActionExploreVelocity.d -c /home/william/Projects/FYP/NavBot/ActionExploreVelocity.cpp"
+            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -o /home/william/Projects/FYP/NavBot/obj/ActionExploreVelocity.o -MF /home/william/Projects/FYP/NavBot/obj/ActionExploreVelocity.d -c /home/william/Projects/FYP/NavBot/ActionExploreVelocity.cpp"
           }
 ,
           {
             "directory": "/home/william/Projects/FYP/NavBot",
             "file": "/home/william/Projects/FYP/NavBot/LineExtractionTask.cpp",
-            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/LineExtractionTask.o -MF /home/william/Projects/FYP/NavBot/obj/LineExtractionTask.d -c /home/william/Projects/FYP/NavBot/LineExtractionTask.cpp"
+            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -o /home/william/Projects/FYP/NavBot/obj/LineExtractionTask.o -MF /home/william/Projects/FYP/NavBot/obj/LineExtractionTask.d -c /home/william/Projects/FYP/NavBot/LineExtractionTask.cpp"
           }
 ,
           {
             "directory": "/home/william/Projects/FYP/NavBot",
             "file": "/home/william/Projects/FYP/NavBot/NavBot.cpp",
-            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/NavBot.o -MF /home/william/Projects/FYP/NavBot/obj/NavBot.d -c /home/william/Projects/FYP/NavBot/NavBot.cpp"
+            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -o /home/william/Projects/FYP/NavBot/obj/NavBot.o -MF /home/william/Projects/FYP/NavBot/obj/NavBot.d -c /home/william/Projects/FYP/NavBot/NavBot.cpp"
           }
 ,
           {
             "directory": "/home/william/Projects/FYP/NavBot",
             "file": "/home/william/Projects/FYP/NavBot/NavBotUtil.cpp",
-            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/NavBotUtil.o -MF /home/william/Projects/FYP/NavBot/obj/NavBotUtil.d -c /home/william/Projects/FYP/NavBot/NavBotUtil.cpp"
+            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -o /home/william/Projects/FYP/NavBot/obj/NavBotUtil.o -MF /home/william/Projects/FYP/NavBot/obj/NavBotUtil.d -c /home/william/Projects/FYP/NavBot/NavBotUtil.cpp"
           }
 ,
           {
             "directory": "/home/william/Projects/FYP/NavBot",
             "file": "/home/william/Projects/FYP/NavBot/SensorSweepTask.cpp",
-            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -m64 -o /home/william/Projects/FYP/NavBot/obj/SensorSweepTask.o -MF /home/william/Projects/FYP/NavBot/obj/SensorSweepTask.d -c /home/william/Projects/FYP/NavBot/SensorSweepTask.cpp"
+            "command": "cc -MMD -MP -I/usr/local/Aria/include -I/usr/local/Aria/ArNetworking/include -o /home/william/Projects/FYP/NavBot/obj/SensorSweepTask.o -MF /home/william/Projects/FYP/NavBot/obj/SensorSweepTask.d -c /home/william/Projects/FYP/NavBot/SensorSweepTask.cpp"
           }
 ]

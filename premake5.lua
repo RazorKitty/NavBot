@@ -2,7 +2,7 @@ workspace 'NavBot'
 configurations {'Release'}
 
 project 'NavBot'
-architecture 'x86_64'
+--architecture 'x86_64'
 language 'c++'
 kind 'ConsoleApp'
 
