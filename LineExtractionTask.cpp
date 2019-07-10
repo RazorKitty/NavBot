@@ -23,10 +23,15 @@ void* LineExtractionTask::runThread(void*) {
             pointPoses.push_back(pointPoses_arr[i]);
             robotPoses.push_back(robotPoses_arr[i]);
         }
-        std::cout << robotPoses.size() << std::endl;
-        for (size_t i = 0; i < robotPoses.size(); ++i) {
-            std::cout << robotPoses[i]->getX() << "\t" << robotPoses[i]->getY() << std::endl; 
-        }
+        delete[] pointPoses_arr;
+        delete[] robotPoses_arr;
+
+        
+
+        //std::cout << robotPoses.size() << std::endl;
+        //for (size_t i = 0; i < robotPoses.size(); ++i) {
+        //    std::cout << robotPoses[i]->getX() << "\t" << robotPoses[i]->getY() << std::endl;
+        //}
     }
     return NULL;
 }
