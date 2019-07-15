@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
     // made some changes
 
     SensorSweepTask sensorSweepTask(&robot, 1500);
-    LineExtractionTask lineExtractionTask(&sensorSweepTask, 0.00, 0.00, 0);
+    LineExtractionTask lineExtractionTask(&robot, &sensorSweepTask, 0.00, 0.00, 0);
     sensorSweepTask.runAsync();
     lineExtractionTask.runAsync();
 

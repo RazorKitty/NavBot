@@ -8,7 +8,7 @@
 class SensorSweepTask : public ArASyncTask {
     public:
         SensorSweepTask(ArRobot*, double);
-        void getData(ArPose***&, ArPose**&, int*);
+        void getData(std::vector<ArPose**>&, std::vector<ArPose*>&);
         void* runThread(void*);
     private:
         ArRobot* robot;
