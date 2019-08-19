@@ -24,32 +24,32 @@ void* LineExtractionTask::runThread(void*) {
             robot->unlock();
             sensorSweepTask->getData(pointPoses, robotPoses);
 
-            //std::cout << robotPoses.size() << std::endl;
-            //for (size_t i = 0; i < robotPoses.size(); ++i) {
-            //    std::cout << robotPoses[i]->getX() << "\t" << robotPoses[i]->getY() << std::endl;
-            //}
-            //robotPoses.clear();
+            std::cout << robotPoses.size() << std::endl;
+            for (size_t i = 0; i < robotPoses.size(); ++i) {
+                std::cout << robotPoses[i]->getX() << "\t" << robotPoses[i]->getY() << std::endl;
+            }
+            robotPoses.clear();
             
             // iterate over all points starting with the most recent data
-            ArPose** sweep = pointPoses[pointPoses.size()-1];
-            for (int i = 1; i < 7; ++i) {
-                // ensure we have 3 points to make a line
-                if (sweep[i-1] != NULL && sweep[i] != NULL && sweep[i+1] != NULL) {
-                    // make a line of best fit
-
-                    // check all points fall within euclideanDistance of this line
-                    
-                    // check other points in this sweep
-
-                    // check history
-
-                    // check we have minSampleNumber for a line
-
-                    // add line to our list of lines
-
-                    
-                }
-            }
+//            ArPose** sweep = pointPoses[pointPoses.size()-1];
+//            for (int i = 1; i < 7; ++i) {
+//                // ensure we have 3 points to make a line
+//                if (sweep[i-1] != NULL && sweep[i] != NULL && sweep[i+1] != NULL) {
+//                    // make a line of best fit
+//
+//                    // check all points fall within euclideanDistance of this line
+//                    
+//                    // check other points in this sweep
+//
+//                    // check history
+//
+//                    // check we have minSampleNumber for a line
+//
+//                    // add line to our list of lines
+//
+//                    
+//                }
+//            }
 
             robot->lock();
             robot->enableMotors();
